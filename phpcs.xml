@@ -2,7 +2,7 @@
 <ruleset name="PixelPerfect CheckoutDiscountDisplay">
     <description>Uses the shared PixelPerfect standard (pixelperfectat/coding-standard).</description>
     <config name="ignore_warnings_on_exit" value="1"/>
-    <!-- Module requires PHP ^8.3; allow readonly classes (PHP 8.2+) -->
+    <!-- Module requires PHP ^8.3; allow readonly classes (PHP 8.2+) and other 8.2+ features -->
     <config name="testVersion" value="8.2-"/>
 
     <file>.</file>
@@ -12,5 +12,8 @@
     <exclude-pattern>*/view/*</exclude-pattern>
     <exclude-pattern>*.sync-conflict-*</exclude-pattern>
 
-    <rule ref="PixelPerfect"/>
+    <rule ref="PixelPerfect">
+        <!-- Module requires PHP ^8.3; readonly class (PHP 8.2+) is intentional -->
+        <exclude name="PHPCompatibility.Classes.NewReadonlyClasses"/>
+    </rule>
 </ruleset>
