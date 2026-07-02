@@ -2,6 +2,8 @@
 <ruleset name="PixelPerfect CheckoutDiscountDisplay">
     <description>Uses the shared PixelPerfect standard (pixelperfectat/coding-standard).</description>
     <config name="ignore_warnings_on_exit" value="1"/>
+    <!-- Module requires PHP ^8.3; allow readonly classes (PHP 8.2+) -->
+    <config name="testVersion" value="8.2-"/>
 
     <file>.</file>
     <exclude-pattern>*/Test/*</exclude-pattern>
